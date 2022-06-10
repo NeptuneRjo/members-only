@@ -72,8 +72,8 @@ app.use((req, res, next) => {
 
 // routes
 app.get('/', (req, res) => res.redirect('/dashboard'))
-app.get('/dashboard', postRoutes, (req, res) => res.render('./views/index.ejs'))
-app.get('/users', userRoutes)
+app.use('/dashboard', postRoutes)
+app.use('/users', userRoutes)
 
 // app
 const port = process.env.PORT || 3000
