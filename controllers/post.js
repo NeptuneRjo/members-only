@@ -5,11 +5,14 @@ const renderNotFound = (res) => {
 }
 
 const getAllPosts = async (req, res) => {
-	const posts = await Post.find({})
-
-	res
-		.status(200)
-		.json({ status: 'success', data: { posts, amount: posts.length } })
+	Post.find().then((result) =>
+		res
+			.render('index', {
+				title: 'All Posts',
+				data: { posts: result, amount: result.length },
+			})
+			.catch((err) => console.log(err))
+	)
 }
 
 const createPost = async (req, res) => {
