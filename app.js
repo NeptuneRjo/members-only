@@ -7,6 +7,9 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 const User = require('./models/User')
 
+const postRoutes = require('./routes/posts')
+const userRoutes = require('./routes/user')
+
 const Schema = mongoose.Schema
 require('dotenv').config()
 
@@ -68,5 +71,8 @@ app.use((req, res, next) => {
 })
 
 // routes
+app.get('/', (req, res) => res.redirect('/dashboard'))
+app.get('/dashboard', postRoutes)
+app.get('/users', userRoutes)
 
 // app
