@@ -9,34 +9,32 @@ const getAllPosts = async (req, res) => {
 }
 
 const createPost = async (req, res) => {
-	const post = await Post.createA(req.body)
+	const post = await Post.create(req.body)
 	res.status(201).json({ post })
 }
 
 const getPost = async (req, res, next) => {
 	const { id: postID } = req.params
-	const post = await Post.findOne({ _id: postID })
 
-	if (!post) {
-		const error = new Error(`No post found with the id: ${postID}`)
-		error.status = 404
-		return next(error)
-	}
-
-	res.status(200).json({ post })
+	Post.findById(postID)
+		.then((result) => res.status(200).json({ result }))
+		.catch((err) => {
+			const error = new Error(`No post found with the id: ${postID}`)
+			error.status = 404
+			return next(error)
+		})
 }
 
 const deletePost = async (req, res) => {
 	const { id: postID } = req.params
-	const post = await Post.findOneAndDelete({ _id: postID })
 
-	if (!post) {
-		const error = new Error(`No post found with the id: ${postID}`)
-		error.status = 404
-		return next(error)
-	}
-
-	res.status(200).json({ post })
+	Post.findByIdAndDelete(id)
+		.then((result) => res.status(200).json({ result }))
+		.catch((err) => {
+			const error = new Error(`No post found with the id: ${postID}`)
+			error.status = 404
+			return next(error)
+		})
 }
 
 module.exports = {
