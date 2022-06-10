@@ -10,7 +10,6 @@ const User = require('./models/User')
 const postRoutes = require('./routes/posts')
 const userRoutes = require('./routes/user')
 
-const Schema = mongoose.Schema
 require('dotenv').config()
 
 // Database
@@ -25,7 +24,7 @@ const app = express()
 app.set('view engine', 'ejs')
 app.set('views', './views')
 
-// Passport
+// Passport & Middleware
 app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }))
 app.use(passport.initialize())
 app.use(passport.session())
