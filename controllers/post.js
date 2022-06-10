@@ -32,7 +32,7 @@ const getPost = async (req, res, next) => {
 const deletePost = async (req, res) => {
 	const { id: postID } = req.params
 
-	Post.findByIdAndDelete(id)
+	Post.findByIdAndDelete(postID)
 		.then((result) => res.status(200).json({ redirect: '/' }))
 		.catch(() => {
 			renderNotFound(res)
