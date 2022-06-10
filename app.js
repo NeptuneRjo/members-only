@@ -72,7 +72,10 @@ app.use((req, res, next) => {
 
 // routes
 app.get('/', (req, res) => res.redirect('/dashboard'))
-app.get('/dashboard', postRoutes)
+app.get('/dashboard', postRoutes, (req, res) => res.render('./views/index.ejs'))
 app.get('/users', userRoutes)
 
 // app
+const port = process.env.PORT || 3000
+
+app.listen(port, () => console.log(`app listening on port ${port}`))
