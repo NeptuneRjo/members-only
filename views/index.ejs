@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('./partials/head.ejs') %>
+	<body>
+		<%- include('./partials/nav.ejs') %> 
+		<div class="posts content">
+			<h2>All Posts</h2>
+
+			<% if (data.amount > 0) { %>
+				<% data.posts.forEach((post) => { %>
+					<a href="/dashboard/<%= post._id %> " class="single">
+						<h3 class="title"><%= post.title %> </h3>
+						<div class="info">
+							<p class="author">
+								<% if (currentUser) { %>
+									<%= post.author %>
+								<% } else { %>
+									anonymous
+								<% } %>   	 
+							</p>
+							<p class="date"><%= post.timestamp %></p>
+						</div>
+					</a>  
+				<% }) %>
+			<% } else { %>
+				<p>There are no posts to display</p>
+			<% } %>   
+		</div>
+	</body>
+</html>
