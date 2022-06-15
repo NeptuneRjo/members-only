@@ -25,13 +25,14 @@ nav {
 	gap: 5rem;
 	font-size: 1.1em;
 }
-.nav.buttons {
+.buttons {
 	background-color: black;
 	padding: 1rem;
 	color: white;
 	font-weight: bold;
+	border: solid 1px transparent;
 }
-.nav.buttons:hover {
+.buttons:hover {
 	cursor: pointer;
 	background-color: #b30404;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.55);
@@ -70,4 +71,34 @@ nav {
 }
 .delete.nav.buttons {
 	border: transparent;
+}
+.auth.body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.auth.title {
+	font-size: 1.8em;
+	margin-bottom: 5rem;
+	border-bottom: solid 3px black;
+}
+.auth.body form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+}
+.auth.body input,
+.auth.body label {
+	width: 50%;
+	padding: 0.5rem;
+	font-weight: bold;
+}
+.auth.button-container {
+	display: flex;
+	width: 50%;
+	justify-content: flex-end;
+	padding: 1rem 0;
 }
