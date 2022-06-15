@@ -1,7 +1,18 @@
 <html>
     <%- include('./partials/head.ejs') %>
     <body>
-        <%- include('./partials/nav.ejs') %> 
-        <h1>sign-in</h1>
+        <%- include('./partials/nav.ejs') %>
+        <div class="auth body">
+            <h2 class='auth title'>Log In</h2>
+            <form action="/users/sign-in" method='POST'>
+                <label for="username">Username</label>
+                <input name="username" placeholder="username" type="text" />
+                <label for="password">Password</label>
+                <input name="password" type="password" placeholder='password'/>
+                <div class="auth button-container">
+                    <button class="auth buttons">Log In</button>
+                </div>
+            </form>
+        </div> 
     </body> 
 </html>
