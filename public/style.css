@@ -37,3 +37,26 @@ nav {
 	background-color: #b30404;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.55);
 }
+.posts.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 3rem 0;
+}
+.posts.title {
+	font-size: 1.8em;
+	margin-bottom: 5rem;
+	border-bottom: solid 3px black;
+}
+.single.item {
+	width: 50%;
+	border-left: solid 3px #b30404;
+	padding: 0 3rem;
+	border-radius: 3px;
+}
+.single.item:hover {
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.35);
+}
+.posts.unavailable {
+	margin-bottom: 2rem;
+}
