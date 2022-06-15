@@ -23,6 +23,7 @@ db.on('error', console.error.bind(console, 'mongo connection error'))
 const app = express()
 app.set('view engine', 'ejs')
 app.set('views', './views')
+app.use(express.static('public'))
 
 // Passport & Middleware
 app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }))
