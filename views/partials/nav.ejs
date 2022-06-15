@@ -1,14 +1,14 @@
 <nav>
-    <h1><a href="/">Members Only</a></h1>
+    <h1 class='nav title'><a href="/">Members Only</a></h1>
     <% if (currentUser) { %>
-        <ul>
-            <li><a href="/sign-out">Sign Out</a></li>
-            <li><a href="/create-post">Create a post</a></li>
+        <ul class='nav links'>
+            <li class='nav buttons'><a href="/sign-out">Sign Out</a></li>
+            <li class='nav buttons'><a href="/create-post">Create a post</a></li>
         </ul>
     <% } else { %>
-        <ul>
-            <li><a href="/sign-up">Sign Up</a></li>
-            <li><a href="/sign-in">Log In</a></li>
+        <ul class='nav links'>
+            <li class='nav buttons'><a href="/sign-up">Sign Up</a></li>
+            <li class='nav buttons'><a href="/sign-in">Log In</a></li>
         </ul>  
     <% } %> 
 </nav>
