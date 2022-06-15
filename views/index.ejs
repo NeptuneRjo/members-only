@@ -4,12 +4,12 @@
 	<body>
 		<%- include('./partials/nav.ejs') %> 
 		<div class="posts content">
-			<h2>All Posts</h2>
+			<h2 class='posts title'>All Posts</h2>
 
 			<% if (data.amount > 0) { %>
 				<% data.posts.forEach((post) => { %>
-					<a href="/dashboard/<%= post._id %> " class="single">
-						<h3 class="title"><%= post.title %> </h3>
+					<a href="/dashboard/<%= post._id %> " class="single item">
+						<h3 class="single title"><%= post.title %> </h3>
 						<div class="info">
 							<p class="author">
 								<% if (currentUser) { %>
@@ -18,12 +18,20 @@
 									anonymous
 								<% } %>   	 
 							</p>
-							<p class="date"><%= post.timestamp %></p>
 						</div>
 					</a>  
 				<% }) %>
 			<% } else { %>
-				<p>There are no posts to display</p>
+				<p class='posts unavailable'>There are no posts to display.</p>
+				<% if (currentUser) { %>
+					<div class='nav buttons'>
+						<a href="/create-post">Create a post</a>
+					</div>
+				<% } else { %>
+					<div class='nav buttons'>
+						<a href="/sign-up">Sign up</a> to get started
+					</div>
+				<% } %> 
 			<% } %>   
 		</div>
 	</body>
