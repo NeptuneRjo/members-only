@@ -76,27 +76,6 @@ app.use('/users', userRoutes)
 
 app.get('/', (req, res) => res.redirect('/dashboard'))
 
-// app.get('/sign-up')
-
-// app.post(
-// 	'/sign-in',
-// 	passport.authenticate('local', {
-// 		successRedirect: '/',
-// 		failureRedirect: '/',
-// 	})
-// )
-
-// app.get('/sign-out', (req, res) => {
-// 	req.logout((err) => {
-// 		if (err) {
-// 			return next(err)
-// 		}
-// 		res.redirect('/')
-// 	})
-// })
-
-// app.get('/sign-in', (req, res) => res.render('sign-in', { title: 'Sign In' }))
-
 // app
 const port = process.env.PORT || 3000
 
