@@ -17,7 +17,6 @@ nav {
 }
 .nav.title:hover {
 	cursor: pointer;
-	border-bottom: solid 3px #b30404;
 }
 .nav.links {
 	list-style: none;
@@ -32,10 +31,8 @@ nav {
 	padding: 1rem;
 	color: white;
 	font-weight: bold;
-	/* border-radius: 4px; */
 }
 .nav.buttons:hover {
-	/* opacity: 0.75; */
 	cursor: pointer;
 	background-color: #b30404;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.55);
