@@ -14,6 +14,9 @@ const PostSchema = new mongoose.Schema(
 		author: {
 			type: String,
 		},
+		authorID: {
+			type: String,
+		},
 	},
 	{ timestamps: true }
 )
