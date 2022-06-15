@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const bcrypt = require('bcryptjs')
+const passport = require('passport')
 
 const createUser = async (req, res, next) => {
 	bcrypt.hash(req.body.password, 10, (err, hashedPassword) => {
@@ -23,6 +24,24 @@ const createUser = async (req, res, next) => {
 	})
 }
 
+const signInUser = async (req, res) => {
+	passport.authenticate('local', {
+		successRedirect: '/',
+		failureRedirect: '/',
+	})
+}
+
+const signOutUser = async (req, res, next) => {
+	req.logout((err) => {
+		if (err) {
+			return next(err)
+		}
+		res.redirect('/')
+	})
+}
+
 module.exports = {
 	createUser,
+	signInUser,
+	signOutUser,
 }
