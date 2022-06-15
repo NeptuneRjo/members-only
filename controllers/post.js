@@ -25,7 +25,9 @@ const getPost = async (req, res, next) => {
 
 	Post.findById(postID)
 		.then((result) =>
-			res.status(200).render('post-details', { post: result, title: 'Post' })
+			res
+				.status(200)
+				.render('post-details', { post: result, title: 'Post Details' })
 		)
 		.catch(() => {
 			renderNotFound(res)
