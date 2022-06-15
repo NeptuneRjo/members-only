@@ -70,9 +70,12 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.get('/', (req, res) => res.redirect('/dashboard'))
 app.use('/dashboard', postRoutes)
 app.use('/users', userRoutes)
+
+app.get('/', (req, res) => res.redirect('/dashboard'))
+app.get('/sign-up', (req, res) => res.render('sign-up', { title: 'Sign Up' }))
+app.get('/sign-in', (req, res) => res.render('sign-in', { title: 'Sign In' }))
 
 // app
 const port = process.env.PORT || 3000
