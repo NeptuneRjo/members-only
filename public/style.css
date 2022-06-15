@@ -13,7 +13,6 @@ nav {
 .nav.title {
 	font-size: 2em;
 	padding: 1rem;
-	border-bottom: solid 3px black;
 }
 .nav.title:hover {
 	cursor: pointer;
@@ -59,4 +58,16 @@ nav {
 }
 .posts.unavailable {
 	margin-bottom: 2rem;
+}
+.details.body {
+	font-size: 1.5em;
+	width: 50%;
+}
+.details.button {
+	width: 50%;
+	display: flex;
+	justify-content: flex-end;
+}
+.delete.nav.buttons {
+	border: transparent;
 }
