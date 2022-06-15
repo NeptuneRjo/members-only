@@ -15,6 +15,10 @@ const getAllPosts = async (req, res) => {
 		.catch((err) => console.log(err))
 }
 
+const getCreatePost = (req, res) => {
+	res.render('create-post', { title: 'Create a new post' })
+}
+
 const createPost = async (req, res) => {
 	const post = await Post.create(req.body)
 	res.status(201).json({ redirect: '/' })
@@ -46,6 +50,7 @@ const deletePost = async (req, res) => {
 
 module.exports = {
 	getAllPosts,
+	getCreatePost,
 	createPost,
 	getPost,
 	deletePost,
