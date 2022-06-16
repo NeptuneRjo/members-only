@@ -12,7 +12,6 @@ const createUser = async (req, res, next) => {
 		const user = new User({
 			username: req.body.username,
 			password: hashedPassword,
-			isAdmin: req.body.isAdmin,
 		}).save((err) => {
 			// error catch for new user
 			if (err) {
@@ -21,13 +20,6 @@ const createUser = async (req, res, next) => {
 
 			res.redirect('/')
 		})
-	})
-}
-
-const signInUser = async (req, res) => {
-	passport.authenticate('local', {
-		successRedirect: '/',
-		failureRedirect: '/',
 	})
 }
 
@@ -42,6 +34,5 @@ const signOutUser = async (req, res, next) => {
 
 module.exports = {
 	createUser,
-	signInUser,
 	signOutUser,
 }
