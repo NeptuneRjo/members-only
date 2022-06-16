@@ -10,7 +10,7 @@ router
 
 router
 	.route('/sign-in')
-	.get((req, res) => res.render('sign-in', { title: 'Sign In' })) // .post(signInUser)
+	.get((req, res) => res.render('sign-in', { title: 'Sign In' }))
 
 router.route('/sign-out').get(signOutUser)
 
