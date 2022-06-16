@@ -7,8 +7,8 @@
 			<h2 class='posts title'><%= post.title %></h1>
 			<p class='details body'><%= post.body %></p>
 			<div class="details button">
-				<% if (!currentUser) { %> 
-					<% if (!currentUser) { %>
+				<% if (user) { %> 
+					<% if (user.id === post.authorID) { %>
 						<button class="delete nav buttons" data-doc="<%= post._id %>">DELETE</button> 
 					<% } %> 
 				<% } %> 
