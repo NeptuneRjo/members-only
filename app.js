@@ -65,6 +65,11 @@ passport.use(
 	})
 )
 
+app.use((req, res, next) => {
+	res.locals.currentUser = req.user
+	next()
+})
+
 // routes
 app.use('/dashboard', postRoutes)
 app.use('/users', userRoutes)
