@@ -1,6 +1,6 @@
 <nav>
     <h1 class='nav title'><a href="/">Members Only</a></h1>
-    <% if (!currentUser) { %>
+    <% if (currentUser) { %>
         <ul class='nav links'>
             <li class='nav buttons'><a href="/users/sign-out">Sign Out</a></li>
             <li class='nav buttons'><a href="/dashboard/create-post">Create a post</a></li>
