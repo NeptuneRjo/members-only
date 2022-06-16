@@ -4,13 +4,13 @@
         <%- include('./partials/nav.ejs') %>
         <div class="auth body">
             <h2 class='auth title'>create post</h2>
-            <form action="/users/sign-up" method='POST'>
-                <label for="username">Username</label>
-                <input name="username" placeholder="username" type="text" />
-                <label for="password">Password</label>
-                <input name="password" type="password" placeholder='password'/>
+            <form action="/dashboard/create-post" method='POST'>
+                <label for="title">Title</label>
+                <input name="title" placeholder="Title" type="text" />
+                <label for="body">Content</label>
+                <input name="body" type="text" placeholder='Content'/>
                 <div class="auth button-container">
-                    <button class="auth buttons">Sign Up</button>
+                    <button class="auth buttons">Post</button>
                 </div>
             </form>
         </div> 
