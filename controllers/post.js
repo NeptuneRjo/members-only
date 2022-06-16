@@ -31,7 +31,11 @@ const getPost = async (req, res, next) => {
 		.then((result) =>
 			res
 				.status(200)
-				.render('post-details', { post: result, title: 'Post Details' })
+				.render('post-details', {
+					post: result,
+					title: 'Post Details',
+					user: req.user,
+				})
 		)
 		.catch(() => {
 			renderNotFound(res)
