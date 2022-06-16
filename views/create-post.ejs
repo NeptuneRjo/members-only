@@ -3,7 +3,7 @@
     <body>
         <%- include('./partials/nav.ejs') %>
         <div class="auth body">
-            <h2 class='auth title'>create post</h2>
+            <h2 class='auth title'><%= title %></h2>
             <form action="/dashboard/create-post" method='POST'>
                 <label for="title">Title</label>
                 <input name="title" placeholder="Title" type="text" />

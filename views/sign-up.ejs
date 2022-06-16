@@ -3,7 +3,7 @@
     <body>
         <%- include('./partials/nav.ejs') %>
         <div class="auth body">
-            <h2 class='auth title'>Sign Up</h2>
+            <h2 class='auth title'><%= title %></h2>
             <form action="/users/sign-up" method='POST'>
                 <label for="username">Username</label>
                 <input name="username" placeholder="username" type="text" />

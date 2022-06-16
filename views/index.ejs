@@ -4,7 +4,7 @@
 	<body>
 		<%- include('./partials/nav.ejs') %> 
 		<div class="posts content">
-			<h2 class='posts title'>All Posts</h2>
+			<h2 class='posts title'><%= title %></h2>
 
 			<% if (data.amount > 0) { %>
 				<% data.posts.forEach((post) => { %>
