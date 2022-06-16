@@ -27,19 +27,17 @@ const createPost = async (req, res) => {
 const getPost = async (req, res, next) => {
 	const { id: postID } = req.params
 
-	Post.findById(postID)
-		.then((result) =>
-			res
-				.status(200)
-				.render('post-details', {
-					post: result,
-					title: 'Post Details',
-					user: req.user,
-				})
-		)
-		.catch(() => {
+	Post.findById(postID).then((result) => {
+		if (!result) {
 			renderNotFound(res)
+		}
+
+		res.status(200).render('post-details', {
+			post: result,
+			title: 'Post Details',
+			user: req.user,
 		})
+	})
 }
 
 const deletePost = async (req, res) => {
