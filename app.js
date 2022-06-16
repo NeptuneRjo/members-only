@@ -74,6 +74,14 @@ app.use((req, res, next) => {
 app.use('/dashboard', postRoutes)
 app.use('/users', userRoutes)
 
+app.post(
+	'/users/sign-in',
+	passport.authenticate('local', {
+		successRedirect: '/',
+		failureRedirect: '/',
+	})
+)
+
 app.get('/', (req, res) => res.redirect('/dashboard'))
 
 // app
