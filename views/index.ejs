@@ -12,7 +12,7 @@
 						<h3 class="single title"><%= post.title %> </h3>
 						<div class="info">
 							<p class="author">
-								<% if (currentUser) { %>
+								<% if (data.user) { %>
 									<%= post.author %>
 								<% } else { %>
 									anonymous
@@ -23,13 +23,13 @@
 				<% }) %>
 			<% } else { %>
 				<p class='posts unavailable'>There are no posts to display.</p>
-				<% if (currentUser) { %>
+				<% if (data.user) { %>
 					<div class='nav buttons'>
-						<a href="/create-post">Create a post</a>
+						<a href="/dashboard/create-post">Create a post</a>
 					</div>
 				<% } else { %>
 					<div class='nav buttons'>
-						<a href="/sign-up">Sign up</a> to get started
+						<a href="/user/sign-up">Sign up</a> to get started
 					</div>
 				<% } %> 
 			<% } %>   
