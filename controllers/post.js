@@ -9,7 +9,7 @@ const getAllPosts = async (req, res) => {
 		.then((result) =>
 			res.render('index', {
 				title: 'All Posts',
-				data: { posts: result, amount: result.length },
+				data: { posts: result, amount: result.length, user: req.user },
 			})
 		)
 		.catch((err) => console.log(err))
@@ -20,8 +20,13 @@ const getCreatePost = (req, res) => {
 }
 
 const createPost = async (req, res) => {
-	const post = await Post.create(req.body)
-	res.status(201).json({ redirect: '/' })
+	const post = await Post.create({
+		title: req.body.title,
+		body: req.body.body,
+		author: req.user.username,
+		authorID: req.user.id,
+	})
+	res.status(201).redirect('/')
 }
 
 const getPost = async (req, res, next) => {
