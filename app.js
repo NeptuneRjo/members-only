@@ -13,7 +13,6 @@ const userRoutes = require('./routes/user')
 require('dotenv').config()
 
 // Database
-const mongoURI = process.env.MONGO_URI
 mongoose.connect(process.env.MONGO_URI, {
 	useUnifiedTopology: true,
 	useNewUrlParser: true,
