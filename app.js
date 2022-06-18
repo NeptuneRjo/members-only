@@ -14,7 +14,10 @@ require('dotenv').config()
 
 // Database
 const mongoURI = process.env.MONGO_URI
-mongoose.connect(mongoURI, { useUnifiedTopology: true, useNewUrlParser: true })
+mongoose.connect(process.env.MONGO_URI, {
+	useUnifiedTopology: true,
+	useNewUrlParser: true,
+})
 
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'mongo connection error'))
