@@ -117,3 +117,15 @@ nav {
 	font-size: 1.8em;
 	margin-bottom: 5rem;
 }
+input {
+	border: solid 1px black;
+	outline: none;
+}
+input:focus {
+	border: solid 1px #b30404;
+	outline: none;
+}
+textarea:focus {
+	border: solid 1px #b30404;
+	outline: none;
+}
