@@ -7,6 +7,8 @@ Users can view anonymous posts created by members.
 Signed in users are able to see the authors of posts and are able to create posts of their own.
 Members are also able to delete their posts.
 
+Visit Members-Only [here](https://members-only-neptunerjo.herokuapp.com/dashboard)
+
 ## Table of contents
 
 - [Screenshots](#screenshots)
